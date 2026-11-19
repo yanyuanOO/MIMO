@@ -49,34 +49,7 @@ CT, MRI, dermoscopy, PET, endoscopy, X-ray, ultrasound, and fundus photography.
 | Test | 6,675 |
 | **Total** | **872,590** |
 
-## Planned release contents
-
-```text
-MIMOSeg/
-├── README.md
-├── DATASET_CARD.md
-├── CITATION.cff
-├── LICENSES/
-│   └── SOURCE_LICENSE_MATRIX.csv
-├── docs/
-│   ├── SCHEMA.md
-│   └── CHANGELOG.md
-├── manifests/
-│   ├── train.jsonl
-│   ├── validation.jsonl
-│   └── test.jsonl
-├── annotations/
-│   ├── perspective_1.jsonl
-│   ├── perspective_2.jsonl
-│   ├── perspective_3.jsonl
-│   └── perspective_4.jsonl
-└── checksums/
-    └── SHA256SUMS
-```
-
-Original images should only be included when their upstream terms permit redistribution. For restricted sources, publish derived annotations plus retrieval/preparation scripts and require users to obtain images from the original provider.
-
-## Access
+## Dataset
 
 Download MIMOSeg from [ModelScope](https://modelscope.cn/models/heavenbird/MIMOSeg).
 
