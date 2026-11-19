@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MIMO is a medical vision-language model with visual referring input and pixel-grounded output, introduced at CVPR 2025.">
+  <meta name="theme-color" content="#ffffff">
+  <title>MIMO · CVPR 2025</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top">MIMO</a>
+    <nav aria-label="Primary navigation">
+      <a href="#overview">Overview</a>
+      <a href="#method">Method</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#citation">Citation</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero container" id="top">
+      <p class="venue">CVPR 2025</p>
+      <h1>MIMO: A Medical Vision Language Model with Visual Referring Multimodal Input and Pixel Grounding Multimodal Output</h1>
+      <p class="authors">
+        Yanyuan Chen<sup>1†</sup>, Dexuan Xu<sup>2†</sup>, Yu Huang<sup>3*</sup>, Songkun Zhan<sup>1</sup>, Hanpin Wang<sup>2</sup>,<br>
+        Dongxue Chen<sup>4</sup>, Xueping Wang<sup>4</sup>, Meikang Qiu<sup>5</sup>, Hang Li<sup>6*</sup>
+      </p>
+      <p class="affiliations">
+        <sup>1</sup>Peking University · <sup>2</sup>Peking University · <sup>3</sup>National Engineering Research Center for Software Engineering<br>
+        <sup>4</sup>Peking University Sixth Hospital · <sup>5</sup>Augusta University · <sup>6</sup>Peking University First Hospital
+      </p>
+      <p class="author-note">† Equal contribution &nbsp;&nbsp; * Corresponding authors</p>
+      <div class="link-row">
+        <a class="button primary" href="https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_MIMO_A_Medical_Vision_Language_Model_with_Visual_Referring_Multimodal_CVPR_2025_paper.pdf" target="_blank" rel="noreferrer">Paper</a>
+        <a class="button" href="https://arxiv.org/abs/2510.10011" target="_blank" rel="noreferrer">arXiv</a>
+        <a class="button" href="https://github.com/yanyuanOO/MIMO" target="_blank" rel="noreferrer">GitHub</a>
+        <span class="button disabled" aria-disabled="true">Dataset coming soon</span>
+      </div>
+    </section>
+
+    <section class="teaser container" aria-label="MIMO overview figure">
+      <img src="assets/mimo-overview.png" alt="Comparison of a traditional medical vision-language model with MIMO's visual referring and pixel grounding capabilities.">
+    </section>
+
+    <section class="section container" id="overview">
+      <h2>Overview</h2>
+      <p>MIMO is a unified medical vision-language model designed to connect language with specific image regions. It accepts textual instructions together with optional point or bounding-box prompts, and produces natural-language responses whose medical concepts are aligned with pixel-level segmentation masks.</p>
+      <p>To train these capabilities, we introduce MIMOSeg, a large-scale medical multimodal dataset spanning basic instruction following and complex question answering with multimodal input and output.</p>
+    </section>
+
+    <section class="section container" id="method">
+      <h2>Method</h2>
+      <p class="section-intro">MIMO combines an image encoder, visual prompt encoder, multimodal input aligner, large language model, segmentation encoder, and mask decoder.</p>
+      <figure class="figure">
+        <img src="assets/mimo-architecture.png" alt="Architecture of MIMO, showing the input encoders, multimodal input aligner, language model, and mask decoder.">
+        <figcaption>MIMO supports point and box visual prompts, grounded language generation, and multi-region mask output.</figcaption>
+      </figure>
+      <div class="two-column">
+        <article>
+          <h3>Visual referring input</h3>
+          <p>Image, text, and visual-prompt embeddings are aligned through cross-attention so that the language model can focus on the region specified by the user.</p>
+        </article>
+        <article>
+          <h3>Pixel-grounded output</h3>
+          <p>Special segmentation tokens connect medical entities in the generated response to the mask decoder, producing phrase-aligned pixel masks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container" id="dataset">
+      <h2>MIMOSeg Dataset</h2>
+      <p class="section-intro">MIMOSeg covers eight medical imaging modalities: CT, MRI, dermoscopy, PET, endoscopy, X-ray, ultrasound, and fundus photography.</p>
+      <figure class="figure compact-figure">
+        <img src="assets/mimoseg-pipeline.png" alt="Construction pipeline of MIMOSeg across four data perspectives.">
+        <figcaption>Construction pipeline of MIMOSeg.</figcaption>
+      </figure>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Perspective</th><th>Task</th><th>Input</th><th>Output</th><th>Samples</th></tr></thead>
+          <tbody>
+            <tr><td>I</td><td>Language-guided segmentation</td><td>Image + text</td><td>Text + mask</td><td>254,774</td></tr>
+            <tr><td>II</td><td>Visual prompt perceiving</td><td>Image + text + point/box</td><td>Text + mask</td><td>254,584</td></tr>
+            <tr><td>III</td><td>Response–segmentation alignment</td><td>Image + question</td><td>Grounded answer + mask</td><td>182,498</td></tr>
+            <tr><td>IV</td><td>Visual prompt assisted QA</td><td>Image + question + point/box</td><td>Grounded answer + mask</td><td>180,734</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="note">
+        <strong>Release note.</strong> The paper describes MIMOSeg as a 895K-sample dataset, while supplementary Table 6 enumerates 872,590 samples. The public dataset card will document the exact released count, splits, checksums, and any filtering or version differences.
+      </aside>
+
+      <div class="release-row">
+        <div>
+          <h3>Dataset release</h3>
+          <p>The release is being prepared for public research use. It will include annotations, split manifests, schema documentation, provenance, checksums, and a source-by-source license table.</p>
+        </div>
+        <a class="button" href="https://github.com/pkusixspace/MIMO/issues" target="_blank" rel="noreferrer">Follow updates</a>
+      </div>
+    </section>
+
+    <section class="section container" id="citation">
+      <h2>Citation</h2>
+      <div class="citation-box">
+        <button class="copy-button" type="button" data-copy-target="bibtex">Copy</button>
+        <pre id="bibtex"><code>@InProceedings{Chen_2025_CVPR,
+  author    = {Chen, Yanyuan and Xu, Dexuan and Huang, Yu and
+               Zhan, Songkun and Wang, Hanpin and Chen, Dongxue and
+               Wang, Xueping and Qiu, Meikang and Li, Hang},
+  title     = {MIMO: A Medical Vision Language Model with Visual Referring
+               Multimodal Input and Pixel Grounding Multimodal Output},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision
+               and Pattern Recognition (CVPR)},
+  year      = {2025},
+  pages     = {24732--24741}
+}</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner"><span>MIMO · CVPR 2025</span></div>
+  </footer>
+  <div class="toast" role="status" aria-live="polite">Citation copied</div>
+</body>
+</html>

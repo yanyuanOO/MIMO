@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use MIMO or MIMOSeg, please cite the CVPR 2025 paper."
+title: "MIMO: A Medical Vision Language Model with Visual Referring Multimodal Input and Pixel Grounding Multimodal Output"
+type: article
+authors:
+  - family-names: Chen
+    given-names: Yanyuan
+  - family-names: Xu
+    given-names: Dexuan
+  - family-names: Huang
+    given-names: Yu
+  - family-names: Zhan
+    given-names: Songkun
+  - family-names: Wang
+    given-names: Hanpin
+  - family-names: Chen
+    given-names: Dongxue
+  - family-names: Wang
+    given-names: Xueping
+  - family-names: Qiu
+    given-names: Meikang
+  - family-names: Li
+    given-names: Hang
+year: 2025
+conference:
+  name: IEEE/CVF Conference on Computer Vision and Pattern Recognition
+  start: 2025
+url: "https://github.com/pkusixspace/MIMO"
+repository-code: "https://github.com/pkusixspace/MIMO"
