@@ -9,10 +9,11 @@ The paper reports a dataset scale of 895K samples. Supplementary Table 6 enumera
 ## Dataset details
 
 - **Dataset name:** MIMOSeg
+- **Dataset URL:** https://modelscope.cn/models/heavenbird/MIMOSeg
 - **Version:** TBD
 - **Release date:** TBD
 - **Maintainers:** Yanyuan Chen, Dexuan Xu, and the MIMO authors (confirm final list)
-- **Repository:** https://github.com/pkusixspace/MIMO
+- **Repository:** https://github.com/yanyuanOO/MIMO
 - **Paper:** https://openaccess.thecvf.com/content/CVPR2025/html/Chen_MIMO_A_Medical_Vision_Language_Model_with_Visual_Referring_Multimodal_CVPR_2025_paper.html
 - **Languages:** English instructions and answers
 - **Modalities:** CT, MRI, dermoscopy, PET, endoscopy, X-ray, ultrasound, fundus photography

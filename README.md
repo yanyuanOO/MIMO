@@ -6,11 +6,11 @@
 
 **CVPR 2025**
 
-[Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_MIMO_A_Medical_Vision_Language_Model_with_Visual_Referring_Multimodal_CVPR_2025_paper.pdf) · [arXiv](https://arxiv.org/abs/2510.10011) · [Project page](https://yanyuanoo.github.io/MIMO/)
+[Paper](https://openaccess.thecvf.com/content/CVPR2025/papers/Chen_MIMO_A_Medical_Vision_Language_Model_with_Visual_Referring_Multimodal_CVPR_2025_paper.pdf) · [arXiv](https://arxiv.org/abs/2510.10011) · [Project page](https://yanyuanoo.github.io/MIMO/) · [Dataset](https://modelscope.cn/models/heavenbird/MIMOSeg)
 
 </div>
 
-> **Release status:** We are preparing MIMOSeg for public research use. The data link will be enabled after the source-license audit, exact-count reconciliation, and checksum verification are complete.
+> **Dataset:** MIMOSeg is available on [ModelScope](https://modelscope.cn/models/heavenbird/MIMOSeg).
 
 ## Overview
 
@@ -78,9 +78,7 @@ Original images should only be included when their upstream terms permit redistr
 
 ## Access
 
-The dataset is not yet available. Please watch this repository or follow the issue tracker for release updates.
-
-<!-- Replace the paragraph above with exact download commands once hosting is final. -->
+Download MIMOSeg from [ModelScope](https://modelscope.cn/models/heavenbird/MIMOSeg).
 
 ## Data format
 
@@ -117,4 +115,4 @@ Users are responsible for complying with applicable laws, institutional policies
 
 ## Contact
 
-For questions about the release, please open a GitHub issue. Add the preferred maintainer email here before launch if direct contact is desired.
+For questions about the dataset, please open a GitHub issue. Add the preferred maintainer email here if direct contact is desired.
